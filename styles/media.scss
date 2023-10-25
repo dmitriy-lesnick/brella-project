@@ -1,0 +1,379 @@
+@import "./variables";
+
+@media (max-width: 1150px) {
+    .header {
+        &__nav {
+            padding-top: 50px;
+            position: fixed;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: $white-turq;
+            z-index: 999;
+            transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -o-transform: translateX(-100%);
+            &--active {
+                transform: translateX(0%);
+                -webkit-transform: translateX(0%);
+                -moz-transform: translateX(0%);
+                -ms-transform: translateX(0%);
+                -o-transform: translateX(0%);
+            }
+            &--transition {
+                transition: 400ms ease-in-out all;
+                -webkit-transition: 400ms ease-in-out all;
+                -moz-transition: 400ms ease-in-out all;
+                -ms-transition: 400ms ease-in-out all;
+                -o-transition: 400ms ease-in-out all;
+            }
+        }
+        &__list {
+            margin-bottom: 50px;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__link {
+            font-size: 30px;
+        }
+
+        &__button-wrp {
+            margin: 0 auto;
+        }
+
+        &__burger {
+            display: block;
+        }
+    }
+
+    .hero {
+        &__features {
+            bottom: -25px;
+            right: 0;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        &__features {
+            padding: 50px 40px;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .why {
+        padding-top: 165px;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        text-align: center;
+        &__desc {
+            margin-right: 0;
+        }
+    }
+
+    .brings {
+        background-image: linear-gradient(90deg, rgb(227, 238, 237), rgb(227, 238, 237) 100%);
+        &__wrp-titles {
+            width: 100%;
+        }
+        &__item-title {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+            & img {
+                display: none;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 22px;
+                height: 12px;
+                background-image: url(../img/arrow-down.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 35px;
+                left: auto;
+                right: 0px;
+                transition: 200ms ease-in-out all;
+                -webkit-transition: 200ms ease-in-out all;
+                -moz-transition: 200ms ease-in-out all;
+                -ms-transition: 200ms ease-in-out all;
+                -o-transition: 200ms ease-in-out all;
+            }
+            &--active {
+                &::after {
+                    transform: rotate(-180deg);
+                    -webkit-transform: rotate(-180deg);
+                    -moz-transform: rotate(-180deg);
+                    -ms-transform: rotate(-180deg);
+                    -o-transform: rotate(-180deg);
+                }
+            }
+        }
+        &__item-txt-mobile {
+            display: block;
+            max-height: 0px;
+            padding-left: 75px;
+            opacity: 0;
+            color: $turquoise2;
+            font-size: 20px;
+            line-height: 34px;
+            letter-spacing: 0.02px;
+            overflow: hidden;
+            will-change: max-height;
+            -webkit-transition: all ease-out 200ms;
+            -o-transition: all ease-out 200ms;
+            transition: all ease-out 200ms;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+            &--active {
+                padding: 20px 0px 40px 20px;
+                opacity: 1;
+            }
+        }
+
+        &__wrp-txt {
+            display: none;
+        }
+    }
+
+    .plan {
+        &__desc {
+            flex-direction: column-reverse;
+        }
+        &__desc-inner-wrp {
+            margin-top: 30px;
+            align-self: center;
+            width: 100%;
+        }
+    }
+
+    .claims {
+        padding: 117px 10px 0 10px;
+        flex-direction: column-reverse;
+        gap: 50px;
+        align-items: center;
+        &__img {
+            height: auto;
+        }
+    }
+
+    .backed {
+        &__slide {
+            padding: 0 20px;
+        }
+    }
+
+    .cta {
+        padding-top: 0px;
+        &__wrp-img {
+            position: static;
+            width: 100%;
+            & img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__wrp-desc {
+            display: block;
+        }
+        &__desc {
+            max-width: 100%;
+            padding-top: 50px;
+            padding-left: 0px;
+        }
+    }
+
+    .footer {
+        &__top {
+            flex-direction: column;
+            gap: 50px;
+        }
+        &__social-wrp {
+            max-width: 80%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 160px;
+        &__title {
+            font-size: 25px;
+        }
+
+        &__drop-menu {
+            max-width: 311px;
+        }
+
+        &__drop-menu-btn {
+            padding: 15px 40px 15px 10px;
+            font-size: 12px;
+            &::after {
+                top: 18px;
+                right: 18px;
+            }
+        }
+
+        &__features {
+            bottom: -200px;
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+    .plan {
+        &__stat-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 50px 10px;
+            justify-items: center;
+        }
+    }
+
+    .why {
+        padding-top: 300px;
+        padding-bottom: 100px;
+    }
+
+    .blog {
+        padding-top: 100px;
+        gap: 22px;
+    }
+
+    .employers {
+        padding-bottom: 100px;
+        background-image: url(../img/employers-back-mobile.png);
+        background-position: 0 0;
+        &__inner-wrp {
+            padding-top: 70px;
+        }
+    }
+}
+
+@media (max-width: 514px) {
+    .hero {
+        padding-top: 150px;
+        &__inner-wrp {
+            padding-bottom: 400px;
+        }
+        &__drop-menu {
+            max-width: 265px;
+        }
+        &__button {
+            padding: 15px 14px;
+        }
+    }
+    .why {
+        padding-left: 10px;
+        padding-right: 10px;
+        &__chart {
+            gap: 15px;
+        }
+        &__chart-stat {
+            font-size: 50px;
+        }
+        &__hr {
+            width: 170%;
+        }
+        &__bars {
+            justify-content: start;
+            column-gap: 10px;
+        }
+        &__bars-srs {
+            font-size: 9px;
+        }
+        &__bar-wrp {
+            width: 50px;
+        }
+        &__bar-name {
+            font-size: 9px;
+        }
+    }
+
+    .brings {
+        &__item-title {
+            font-size: 20px;
+        }
+    }
+
+    .plan {
+        padding-bottom: 100px;
+    }
+
+    .footer {
+        padding-top: 60px;
+        &__logo {
+            width: 100%;
+        }
+        &__menu {
+            row-gap: 30px;
+            column-gap: 80px;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .hero {
+        &__features {
+            padding: 50px 15px;
+        }
+
+        &__features-txt {
+            font-size: 11px;
+        }
+    }
+
+    .why {
+        &__chart-txt {
+            font-size: 10px;
+        }
+        &__bar-name {
+            font-size: 7px;
+        }
+        &__bar-wrp {
+            width: 37px;
+        }
+    }
+
+    .brings {
+        &__item-title {
+            font-size: 18px;
+            &::after {
+                right: -33px;
+            }
+        }
+    }
+
+    .plan {
+        padding-top: 90px;
+    }
+
+    .claims {
+        padding-top: 90px;
+    }
+
+    .blog {
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+
+    .footer {
+        &__terms-wrp {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}
