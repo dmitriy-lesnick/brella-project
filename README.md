@@ -10,6 +10,6 @@ I study frontend development in various courses and platforms of the Internet.
 
 Ready for great projects with wonderful people.
 
-Brella - homePage - dmitriy-lesnick.github.io/brella-project/
+Brella - homePage - https://dmitriy-lesnick.github.io/brella-project/
 
-Portfolio dmitriy-lesnick.github.io/Portfolio/ Мокринский Дмитрий Сергеевич Дмитрий Лесник Фронтенд разработчик
+Portfolio https://dmitriy-lesnick.github.io/Portfolio/ Мокринский Дмитрий Сергеевич Дмитрий Лесник Фронтенд разработчик
