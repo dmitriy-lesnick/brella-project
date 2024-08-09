@@ -3,7 +3,7 @@
 .container {
     max-width: $container;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 30px;
 }
 
 .page-title {
@@ -37,17 +37,27 @@
     }
 }
 
+.page-button {
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    background: #43806c;
+    border-radius: 6px;
+    transition: 200ms ease-in-out;
+    &:hover {
+        background-color: $yellow;
+    }
+}
+
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
+    position: absolute;
+    margin: 0 auto;
     left: 0;
     right: 0;
     z-index: 100;
-    margin: 0 auto;
-    max-width: $width;
-    padding: 20px 65px 31px 45px;
+    padding: 20px 0;
     background-color: $white;
     z-index: 100;
     transition: 400ms ease-in-out all;
@@ -56,7 +66,19 @@
     -ms-transition: 400ms ease-in-out all;
     -o-transition: 400ms ease-in-out all;
     &--active {
-        box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.05);
+        position: fixed;
+        box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        max-width: $max-width;
+    }
+
+    &__logo {
+        display: block;
+        margin-right: auto;
     }
     &__nav {
         display: flex;
@@ -78,7 +100,32 @@
         height: 26px;
         z-index: 1000;
         position: relative;
+        cursor: pointer;
+        &--active {
+            .header__burger-line {
+                &:nth-child(1) {
+                    top: 50%;
+                    transform: translateY(-50%) rotate(405deg);
+                    -webkit-transform: translateY(-50%) rotate(405deg);
+                    -moz-transform: translateY(-50%) rotate(405deg);
+                    -ms-transform: translateY(-50%) rotate(405deg);
+                    -o-transform: translateY(-50%) rotate(405deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    bottom: 50%;
+                    transform: translateY(50%) rotate(-405deg);
+                    -webkit-transform: translateY(50%) rotate(-405deg);
+                    -moz-transform: translateY(50%) rotate(-405deg);
+                    -ms-transform: translateY(50%) rotate(-405deg);
+                    -o-transform: translateY(50%) rotate(-405deg);
+                }
+            }
+        }
     }
+
     &__burger-line {
         width: 100%;
         height: 2px;
@@ -103,28 +150,6 @@
         &:nth-child(3) {
             bottom: 0;
         }
-
-        &--active {
-            &:nth-child(1) {
-                top: 50%;
-                transform: translateY(-50%) rotate(405deg);
-                -webkit-transform: translateY(-50%) rotate(405deg);
-                -moz-transform: translateY(-50%) rotate(405deg);
-                -ms-transform: translateY(-50%) rotate(405deg);
-                -o-transform: translateY(-50%) rotate(405deg);
-            }
-            &:nth-child(2) {
-                display: none;
-            }
-            &:nth-child(3) {
-                bottom: 50%;
-                transform: translateY(50%) rotate(-405deg);
-                -webkit-transform: translateY(50%) rotate(-405deg);
-                -moz-transform: translateY(50%) rotate(-405deg);
-                -ms-transform: translateY(50%) rotate(-405deg);
-                -o-transform: translateY(50%) rotate(-405deg);
-            }
-        }
     }
 
     &__item {
@@ -135,22 +160,8 @@
     }
 
     &__button-wrp {
-        margin-left: 69px;
+        margin-left: 70px;
         display: flex;
-    }
-
-    &__button {
-        padding: 10px 15px;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 20px;
-        color: $white;
-        background: $turquoise2;
-        border-radius: 6px;
-        transition: 200ms ease-in-out;
-        &:hover {
-            background-color: $yellow;
-        }
     }
 
     &__login {
@@ -158,7 +169,6 @@
         margin-right: 45px;
         font-weight: 700;
         font-size: 14px;
-        line-height: 20px;
         color: $turquoise;
         position: relative;
         &::before {
@@ -183,11 +193,6 @@
     }
 }
 
-main {
-    max-width: $width;
-    margin: 0 auto;
-}
-
 .hero {
     padding: 200px 40px 0 40px;
     background-image: url(../img/hero-back.png);
@@ -195,9 +200,9 @@ main {
     background-size: cover;
     background-position: center;
 
-    &__inner-wrp {
+    .container {
         position: relative;
-        padding-bottom: 281px;
+        padding-bottom: 280px;
     }
 
     &__title {
@@ -217,33 +222,27 @@ main {
     &__drop-menu {
         max-width: 387px;
         position: relative;
+        z-index: 50;
     }
     &__drop-menu-btns {
         display: flex;
     }
 
     &__drop-menu-btn {
-        position: relative;
-        padding: 20px 88px 20px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-left: 20px;
+        width: 100%;
+        height: 60px;
         font-weight: 700;
         font-size: 14px;
         line-height: 20px;
         color: $black;
         background: $white;
         &::after {
-            content: "";
+            content: url("../img/arrow-down.svg");
             width: 10px;
-            height: 10px;
-            border-bottom: 2px solid $turquoise;
-            border-right: 2px solid $turquoise;
-            position: absolute;
-            top: 23px;
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            right: 60px;
             transition: 200ms ease-in-out all;
             -webkit-transition: 200ms ease-in-out all;
             -moz-transition: 200ms ease-in-out all;
@@ -252,29 +251,32 @@ main {
         }
         &--active {
             &::after {
-                transform: rotate(-135deg);
-                -webkit-transform: rotate(-135deg);
-                -moz-transform: rotate(-135deg);
-                -ms-transform: rotate(-135deg);
-                -o-transform: rotate(-135deg);
+                transform: rotate(-180deg);
+                -webkit-transform: rotate(-180deg);
+                -moz-transform: rotate(-180deg);
+                -ms-transform: rotate(-180deg);
+                -o-transform: rotate(-180deg);
             }
         }
     }
 
     &__button {
-        padding: 20px 35px;
+        width: 120px;
         font-weight: 700;
         font-size: 13px;
         line-height: 20px;
         color: $white;
         background: $turquoise2;
         transition: 200ms ease-in-out;
+        &:hover {
+            background-color: #f0a446;
+        }
     }
     &__drop-menu-list {
         position: absolute;
-        z-index: 888;
     }
     &__drop-menu-item {
+        display: block;
         opacity: 0;
         padding-left: 20px;
         font-weight: 700;
@@ -295,11 +297,10 @@ main {
             color: $yellow;
         }
         &--active {
+            background-color: $white-turq;
             opacity: 1;
-            display: block;
-            padding: 20px 88px 20px 20px;
-            animation: transition-opacity 100ms ease-in-out;
-            -webkit-animation: transition-opacity 100ms ease-in-out;
+            padding: 20px;
+            border-top: 1px solid #43806c42;
         }
     }
 
@@ -340,13 +341,15 @@ main {
 }
 
 .why {
-    padding: 213px 60px 157px 60px;
-    display: flex;
-    justify-content: space-between;
+    padding: 213px 0 157px 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
 
     &__desc {
         max-width: 510px;
-        margin-right: 50px;
     }
 
     &__title {
@@ -361,7 +364,6 @@ main {
 
     &__chart {
         display: flex;
-        flex-shrink: 0;
     }
 
     &__chart-desc {
@@ -479,7 +481,7 @@ main {
         rgb(33, 78, 65)
     );
 
-    &__inner-wrp {
+    .container {
         display: flex;
     }
     &__wrp-titles {
@@ -495,27 +497,27 @@ main {
     &__item-title {
         display: flex;
         align-items: center;
-        gap: 30px;
         padding-top: 8px;
         padding-bottom: 10px;
         font-family: "Roboto";
         font-size: 32px;
         line-height: 42px;
         color: $turquoise2;
+        transition: 300ms;
+        -webkit-transition: 300ms;
+        -moz-transition: 300ms;
+        -ms-transition: 300ms;
+        -o-transition: 300ms;
         cursor: pointer;
-        position: relative;
         &:hover {
-            font-weight: 700;
             color: $turquoise;
-        }
-        & img {
-            display: none;
         }
         &--active {
             font-weight: 700;
             color: $turquoise;
-            & img {
-                display: block;
+            &::after {
+                content: url("../img/arrow.svg");
+                margin-left: 10px;
             }
         }
     }
@@ -528,7 +530,7 @@ main {
         font-size: 20px;
         line-height: 34px;
         letter-spacing: 0.02px;
-        color: $white;
+        color: $turquoise2;
         overflow: hidden;
         will-change: max-height;
         -webkit-transition: all ease-out 200ms;
@@ -536,6 +538,20 @@ main {
         transition: all ease-out 200ms;
         -webkit-box-sizing: content-box;
         box-sizing: content-box;
+        transform: translateY(-30%);
+        -webkit-transform: translateY(-30%);
+        -moz-transform: translateY(-30%);
+        -ms-transform: translateY(-30%);
+        -o-transform: translateY(-30%);
+        &--active {
+            padding: 20px 0px 40px 20px;
+            opacity: 1;
+            transform: translateY(0%);
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            -ms-transform: translateY(0%);
+            -o-transform: translateY(0%);
+        }
     }
 
     &__wrp-txt {
@@ -560,10 +576,11 @@ main {
 }
 
 .plan {
-    padding: 120px 10px;
+    padding: 120px 0;
     &__desc {
         display: flex;
         justify-content: space-between;
+        gap: 30px;
     }
     &__desc-inner-wrp {
         max-width: 551px;
@@ -578,6 +595,10 @@ main {
         margin-top: 34px;
         line-height: 30px;
         letter-spacing: 0.02px;
+    }
+
+    &__img {
+        width: 560px;
     }
     &__stat-list {
         display: grid;
@@ -606,12 +627,12 @@ main {
 }
 
 .claims {
-    padding: 117px 10px 0 115px;
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    &__img {
-        max-height: 500px;
+    padding-top: 120px;
+
+    .container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
     }
     &__desc {
         max-width: 545px;
@@ -629,6 +650,45 @@ main {
         line-height: 30px;
         letter-spacing: 0.02 px;
     }
+    &__video {
+        width: 100%;
+        max-height: 0;
+        will-change: max-height;
+        opacity: 0;
+        transition: 400ms ease-in-out;
+        -webkit-transition: 400ms ease-in-out;
+        -moz-transition: 400ms ease-in-out;
+        -ms-transition: 400ms ease-in-out;
+        -o-transition: 400ms ease-in-out;
+        &--active {
+            padding: 30px 0;
+            max-height: 1000px;
+            opacity: 1;
+        }
+    }
+
+    &__video-btns {
+        position: relative;
+        display: flex;
+    }
+
+    &__video-hide {
+        position: absolute;
+        z-index: -1;
+        margin-left: 0px;
+        transition: 400ms;
+        -webkit-transition: 400ms;
+        -moz-transition: 400ms;
+        -ms-transition: 400ms;
+        -o-transition: 400ms;
+        opacity: 0;
+        &--active {
+            position: relative;
+            z-index: 0;
+            margin-left: 100px;
+            opacity: 1;
+        }
+    }
 }
 
 .employers {
@@ -636,9 +696,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    &__inner-wrp {
-        padding: 126px 10px 114px 10px;
-    }
+    padding: 120px 0;
     &__subtitle {
         margin-bottom: 20px;
         font-size: 13px;
@@ -660,7 +718,7 @@ main {
 }
 
 .backed {
-    padding: 120px 10px 121px 10px;
+    padding: 120px 0;
     &__title {
         width: 100%;
         display: block;
@@ -700,12 +758,16 @@ main {
 }
 
 .blog {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    padding: 120px 10px 146px 10px;
+    padding: 120px 0;
     border-top: 1px solid rgba(199, 199, 199, 0.37);
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
     &__slider {
         width: 100%;
         overflow-x: hidden;
@@ -723,9 +785,8 @@ main {
     }
     &__slide {
         padding: 0 40px;
-    }
-
-    &__link {
+        text-align: center;
+        cursor: pointer;
         &:hover .blog__img,
         &:hover .blog__subtitle,
         &:hover .blog__title {
@@ -761,29 +822,25 @@ main {
 
 .cta {
     background-color: $white-turq;
-    position: relative;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        max-width: 1500px;
+    }
+
     &__wrp-img {
-        position: absolute;
-        width: 50%;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        & img {
-            height: 100%;
+        img {
             object-fit: cover;
+            height: 100%;
         }
     }
-    &__wrp-desc {
-        display: flex;
-        justify-content: flex-end;
-    }
+
     &__desc {
+        padding: 120px 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 120px;
         max-width: 600px;
         z-index: 2;
     }
@@ -793,27 +850,11 @@ main {
 
     &__link {
         padding: 13px 30px;
-        background: $turquoise2;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 13px;
-        line-height: 21px;
-        text-align: center;
-        letter-spacing: 0.02px;
-        color: $white;
-        transition: 200ms ease-in-out;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        -ms-border-radius: 6px;
-        -o-border-radius: 6px;
-        &:hover {
-            background-color: $yellow;
-        }
     }
 }
 
 .footer {
-    padding: 100px 10px 50px 10px;
+    padding: 100px 0 50px 0;
     background: $turquoise;
     &__top {
         display: flex;
@@ -877,7 +918,6 @@ main {
         display: flex;
         justify-content: space-between;
         border: 1px solid $white;
-        box-sizing: border-box;
     }
     &__email {
         display: block;
