@@ -2,7 +2,7 @@
 
 Dmitriy Mokrinskiy Frontend developer
 
-30 years old, Moscow
+31 years old, Moscow
 
 About me Hello, I’m Dmitriy — I’m a frontend developer from Moscow. I am interested in creating websites and everything connected with them.
 
